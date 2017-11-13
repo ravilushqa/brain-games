@@ -1,0 +1,15 @@
+{
+    "name": "ravilushqa/project-lvl1-s164",
+    "bin": [
+        "bin/brain-games"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ravilushqa",
+            "email": "galaktionov.r@gmail.com"
+        }
+    ],
+    "require": {}
+}
