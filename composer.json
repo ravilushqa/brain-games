@@ -1,7 +1,8 @@
 {
   "name": "ravilushqa/brain-games",
   "bin": [
-    "bin/brain-games"
+    "bin/brain-games",
+    "bin/brain-even"
   ],
   "description": "project-lvl1-s164",
   "type": "project",
