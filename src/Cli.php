@@ -1,6 +1,6 @@
 <?php
-// @codingStandardsIgnoreFile
-
+// @codingStandardsIgnoreStart
+// @codingStandardsIgnoreEnd
 namespace BrainGames\Cli;
 
 use function \cli\line;
