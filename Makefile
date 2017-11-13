@@ -3,4 +3,4 @@ install:
 lint:
 	composer run-script phpcs src bin
 lint-fix:
-	composer run-script phpcbf
+	composer run-script phpcbf src bin
