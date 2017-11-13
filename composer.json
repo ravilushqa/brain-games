@@ -1,15 +1,22 @@
 {
-    "name": "ravilushqa/project-lvl1-s164",
-    "bin": [
-        "bin/brain-games"
-    ],
-    "type": "project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "ravilushqa",
-            "email": "galaktionov.r@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "ravilushqa/project-lvl1-s164",
+  "bin": [
+    "bin/brain-games"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ravil Galaktionov",
+      "email": "galaktionov.r@gmail.com",
+      "homepage": "http://web-artisan.ru",
+      "role": "Developer"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Ravilushqa\\Brain-games\\": "src/"
+    }
+  }
 }
