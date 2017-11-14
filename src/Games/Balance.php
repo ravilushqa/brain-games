@@ -41,9 +41,11 @@ function balance(int $num) : string
     $numbersArray = str_split($num);
     $count = count($numbersArray);
 
-    $middle = array_reduce($numbersArray, function ($a, $b) {
-        return $a + $b;
-    }, 0) / $count;
+    $middle = array_reduce(
+        $numbersArray, function ($a, $b) {
+            return $a + $b;
+        }, 0
+    ) / $count;
 
     /**
      * Check if all digits should be the same
@@ -55,12 +57,15 @@ function balance(int $num) : string
     $minPossibleNumber = floor($middle);
     $maxPossibleNumber = ceil($middle);
 
-
-    $balancer = function($arr) use (&$balancer, $minPossibleNumber, $maxPossibleNumber) {
+    // @codingStandardsIgnoreStart
+    $balancer = function ($arr) use (&$balancer, $minPossibleNumber, $maxPossibleNumber) {
+    // @codingStandardsIgnoreEnd
         $maxNumberIndex = array_search(max($arr), $arr);
         $minNumberIndex = array_search(min($arr), $arr);
-
+        // @codingStandardsIgnoreStart
         if ($arr[$maxNumberIndex] > $maxPossibleNumber || $arr[$minNumberIndex] < $minPossibleNumber) {
+        // @codingStandardsIgnoreEnd
+
             $arr[$maxNumberIndex]--;
             $arr[$minNumberIndex]++;
             return $balancer($arr);
