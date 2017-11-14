@@ -4,4 +4,4 @@
 
 require_once __DIR__ . '/../src/bootstrap.php';
 
-BrainGames\Games\Even\run();
+BrainGames\Games\Calc\run();

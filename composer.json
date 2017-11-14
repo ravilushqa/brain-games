@@ -2,7 +2,8 @@
   "name": "ravilushqa/brain-games",
   "bin": [
     "bin/brain-games",
-    "bin/brain-even"
+    "bin/brain-even",
+    "bin/brain-calc"
   ],
   "description": "project-lvl1-s164",
   "type": "project",
@@ -27,7 +28,8 @@
     },
     "files": [
       "src/Cli.php",
-      "src/Games/Even.php"
+      "src/Games/Even.php",
+      "src/Games/Calc.php"
     ]
   },
   "require": {
