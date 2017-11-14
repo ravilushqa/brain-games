@@ -1,5 +1,6 @@
 <?php
-
+// @codingStandardsIgnoreStart
+// @codingStandardsIgnoreEnd
 
 namespace BrainGames\Games\Calc;
 use function \Braingames\Cli\game;
