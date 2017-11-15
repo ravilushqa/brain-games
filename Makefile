@@ -1,6 +1,6 @@
 install:
 	composer install
 lint:
-	composer run-script phpcs src bin
+	composer run-script phpcs -- --standard=PSR2 src
 lint-fix:
-	composer run-script phpcbf src bin
+	composer run-script phpcbf src

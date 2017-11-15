@@ -1,6 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-// @codingStandardsIgnoreEnd
+
 
 namespace BrainGames\Games\Calc;
 use function \Braingames\Cli\game;
@@ -18,9 +17,7 @@ const SIGNS = ['+', '-', '*'];
 function run()
 {
     $question = function () {
-        // @codingStandardsIgnoreStart
         return rand(MIN_VALUE, MAX_VALUE) . ' ' . SIGNS[array_rand(SIGNS)] . ' ' . rand(MIN_VALUE, MAX_VALUE);
-        // @codingStandardsIgnoreEnd
     };
 
     $isCorrect = function (string $expression) {

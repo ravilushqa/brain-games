@@ -1,6 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-// @codingStandardsIgnoreEnd
+
 namespace BrainGames\Cli;
 
 use function \cli\line;
@@ -56,9 +55,7 @@ function game(callable $question, callable $trueAnswer, string $task)
             line('Correct!');
             continue;
         } else {
-            // @codingStandardsIgnoreStart
             line("'$answer' is wrong answer ;(. Correct answer was '{$trueAnswer($issue)}'.");
-            // @codingStandardsIgnoreEnd
             line("Let's try again, $name");
             return;
         }

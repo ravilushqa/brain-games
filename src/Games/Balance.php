@@ -1,6 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-// @codingStandardsIgnoreEnd
+
 
 namespace BrainGames\Games\Balance;
 use function \Braingames\Cli\game;
@@ -57,14 +56,10 @@ function balance(int $num) : string
     $minPossibleNumber = floor($middle);
     $maxPossibleNumber = ceil($middle);
 
-    // @codingStandardsIgnoreStart
     $balancer = function ($arr) use (&$balancer, $minPossibleNumber, $maxPossibleNumber) {
-    // @codingStandardsIgnoreEnd
         $maxNumberIndex = array_search(max($arr), $arr);
         $minNumberIndex = array_search(min($arr), $arr);
-        // @codingStandardsIgnoreStart
         if ($arr[$maxNumberIndex] > $maxPossibleNumber || $arr[$minNumberIndex] < $minPossibleNumber) {
-        // @codingStandardsIgnoreEnd
 
             $arr[$maxNumberIndex]--;
             $arr[$minNumberIndex]++;

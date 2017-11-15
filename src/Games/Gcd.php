@@ -1,6 +1,5 @@
 <?php
-// @codingStandardsIgnoreStart
-// @codingStandardsIgnoreEnd
+
 
 namespace BrainGames\Games\Gcd;
 use function \Braingames\Cli\game;
@@ -17,9 +16,7 @@ const MAX_VALUE = 100;
 function run()
 {
     $question = function () {
-        // @codingStandardsIgnoreStart
         return rand(MIN_VALUE, MAX_VALUE) . ' ' . rand(MIN_VALUE, MAX_VALUE);
-        // @codingStandardsIgnoreEnd
     };
 
     $isCorrect = function (string $expression) {
