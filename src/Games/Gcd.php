@@ -20,9 +20,9 @@ function run()
     };
 
     $answer = function (string $expression) : string {
-        list($firstArgument, $secondArgument) = explode(" ", $expression);
+        list($firstNumber, $secondNumber) = explode(" ", $expression);
 
-        return gcd($firstArgument, $secondArgument);
+        return gcd($firstNumber, $secondNumber);
     };
 
     $questionAndAnswer = function () use ($question, $answer) {
@@ -43,15 +43,15 @@ function run()
 /**
  * Find gcd
  *
- * @param int $firstArgument
- * @param int $secondArgument
+ * @param int $firstNumber
+ * @param int $secondNumber
  * @return int
  */
-function gcd(int $firstArgument, int $secondArgument) : int
+function gcd(int $firstNumber, int $secondNumber) : int
 {
-    $findGcd = function ($firstArgument, $secondArgument) use (&$findGcd) {
-        return $secondArgument ? $findGcd($secondArgument, $firstArgument % $secondArgument) : $firstArgument;
+    $findGcd = function ($firstNumber, $secondNumber) use (&$findGcd) {
+        return $secondNumber ? $findGcd($secondNumber, $firstNumber % $secondNumber) : $firstNumber;
     };
 
-    return $findGcd($firstArgument, $secondArgument);
+    return $findGcd($firstNumber, $secondNumber);
 }
