@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BrainGames\Games\Gcd;
 
 use function \Braingames\Cli\game;
@@ -20,8 +19,10 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE) . ' ' . rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $isCorrect = function (string $expression) {
-        return gcd($expression);
+    $isCorrect = function (string $expression) : string {
+        list($firstArgument, $secondArgument) = explode(" ", $expression);
+
+        return gcd($firstArgument, $secondArgument);
     };
 
     game($question, $isCorrect, TASK);
@@ -32,19 +33,15 @@ function run()
 /**
  * Find gcd
  *
- * @param string $nums string with two numbers
- *
- * @return string
+ * @param int $firstArgument
+ * @param int $secondArgument
+ * @return int
  */
-function gcd(string $nums) : string
+function gcd(int $firstArgument, int $secondArgument) : int
 {
-    list($firstArgument, $secondArgument) = explode(" ", $nums);
-
     $findGcd = function ($firstArgument, $secondArgument) use (&$findGcd) {
-        return $secondArgument ?
-            $findGcd($secondArgument, $firstArgument % $secondArgument) :
-            $firstArgument;
+        return $secondArgument ? $findGcd($secondArgument, $firstArgument % $secondArgument) : $firstArgument;
     };
 
-    return (string)$findGcd($firstArgument, $secondArgument);
+    return $findGcd($firstArgument, $secondArgument);
 }

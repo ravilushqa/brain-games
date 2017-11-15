@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BrainGames\Games\Balance;
 
 use function \Braingames\Cli\game;
@@ -20,7 +19,7 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $correct = function ($num) {
+    $correct = function ($num) : string {
         return balance($num);
     };
 

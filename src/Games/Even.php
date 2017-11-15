@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BrainGames\Games\Even;
 
 use function \Braingames\Cli\game;
@@ -20,7 +19,7 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $isCorrect = function ($num) {
+    $isCorrect = function ($num) : string {
         return isEven($num);
     };
 

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BrainGames\Games\Calc;
 
 use function \Braingames\Cli\game;
@@ -21,7 +20,7 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE) . ' ' . SIGNS[array_rand(SIGNS)] . ' ' . rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $isCorrect = function (string $expression) {
+    $isCorrect = function (string $expression) : string {
         return solveExpression($expression);
     };
 
