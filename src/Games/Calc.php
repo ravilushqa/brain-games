@@ -2,6 +2,7 @@
 
 
 namespace BrainGames\Games\Calc;
+
 use function \Braingames\Cli\game;
 
 const TASK = 'What is the result of the expression?';
@@ -40,25 +41,24 @@ function solveExpression(string $exp) : string
 {
     list($firstArgument, $sign, $secondArgument) = explode(" ", $exp);
 
-    switch ($sign)
-    {
-    case '+':
-        return $firstArgument + $secondArgument;
+    switch ($sign) {
+        case '+':
+            return $firstArgument + $secondArgument;
             break;
 
-    case '-':
-        return $firstArgument - $secondArgument;
+        case '-':
+            return $firstArgument - $secondArgument;
             break;
 
-    case '*':
-        return $firstArgument * $secondArgument;
+        case '*':
+            return $firstArgument * $secondArgument;
             break;
 
-    case '/':
-        return $firstArgument / $secondArgument;
+        case '/':
+            return $firstArgument / $secondArgument;
             break;
 
-    default:
-        return "Sorry No command found";
+        default:
+            return "Sorry No command found";
     }
 }

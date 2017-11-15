@@ -39,7 +39,7 @@ function intro(string $task)
  * @param callable $question   question for user
  * @param callable $trueAnswer true answer
  * @param string   $task       Task for user
- * 
+ *
  * @return void
  */
 function game(callable $question, callable $trueAnswer, string $task)

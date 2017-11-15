@@ -2,6 +2,7 @@
 
 
 namespace BrainGames\Games\Balance;
+
 use function \Braingames\Cli\game;
 
 const TASK = 'Balance the given number.';
@@ -41,9 +42,11 @@ function balance(int $num) : string
     $count = count($numbersArray);
 
     $middle = array_reduce(
-        $numbersArray, function ($a, $b) {
+        $numbersArray,
+        function ($a, $b) {
             return $a + $b;
-        }, 0
+        },
+        0
     ) / $count;
 
     /**
@@ -60,7 +63,6 @@ function balance(int $num) : string
         $maxNumberIndex = array_search(max($arr), $arr);
         $minNumberIndex = array_search(min($arr), $arr);
         if ($arr[$maxNumberIndex] > $maxPossibleNumber || $arr[$minNumberIndex] < $minPossibleNumber) {
-
             $arr[$maxNumberIndex]--;
             $arr[$minNumberIndex]++;
             return $balancer($arr);
