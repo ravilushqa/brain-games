@@ -19,23 +19,30 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $isCorrect = function ($num) : string {
-        return isEven($num);
+    $answer = function ($num) : string {
+        return isEven($num) ? 'yes' : 'no';
     };
 
-    game($question, $isCorrect, TASK);
+    $questionAndAnswer = function () use ($question, $answer) {
+        $generatedQuestion = $question();
+        $generatedAnswer = $answer($generatedQuestion);
+
+        return [
+            'question' => (string) $generatedQuestion,
+            'answer' => (string) $generatedAnswer
+        ];
+    };
+
+    game($questionAndAnswer, TASK);
 
     return;
 }
 
 /**
- * Checks for even number
- *
- * @param int $num The number to check
- *
- * @return string
+ * @param int $num
+ * @return bool
  */
-function isEven(int $num) : string
+function isEven(int $num) : bool
 {
-    return $num % 2 ? 'yes' : 'no';
+    return $num % 2;
 }

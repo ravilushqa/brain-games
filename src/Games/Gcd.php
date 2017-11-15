@@ -19,13 +19,23 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE) . ' ' . rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $isCorrect = function (string $expression) : string {
+    $answer = function (string $expression) : string {
         list($firstArgument, $secondArgument) = explode(" ", $expression);
 
         return gcd($firstArgument, $secondArgument);
     };
 
-    game($question, $isCorrect, TASK);
+    $questionAndAnswer = function () use ($question, $answer) {
+        $generatedQuestion = $question();
+        $generatedAnswer = $answer($generatedQuestion);
+
+        return [
+            'question' => (string) $generatedQuestion,
+            'answer' => (string) $generatedAnswer
+        ];
+    };
+
+    game($questionAndAnswer, TASK);
 
     return;
 }

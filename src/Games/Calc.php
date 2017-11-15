@@ -20,11 +20,21 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE) . ' ' . SIGNS[array_rand(SIGNS)] . ' ' . rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $isCorrect = function (string $expression) : string {
+    $answer = function (string $expression) : string {
         return solveExpression($expression);
     };
 
-    game($question, $isCorrect, TASK);
+    $questionAndAnswer = function () use ($question, $answer) {
+        $generatedQuestion = $question();
+        $generatedAnswer = $answer($generatedQuestion);
+
+        return [
+            'question' => (string) $generatedQuestion,
+            'answer' => (string) $generatedAnswer
+        ];
+    };
+
+    game($questionAndAnswer, TASK);
 
     return;
 }

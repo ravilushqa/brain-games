@@ -36,26 +36,25 @@ function intro(string $task)
 /**
  * Run the game
  *
- * @param callable $question   question for user
- * @param callable $trueAnswer true answer
- * @param string   $task       Task for user
- *
- * @return void
+ * @param callable $getQuestionAndAnswer
+ * @param string $task
  */
-function game(callable $question, callable $trueAnswer, string $task)
+function game(callable $getQuestionAndAnswer, string $task)
 {
     intro($task);
     $name = getName();
 
     for ($i=0; $i < ANSWER_COUNT; $i++) {
-        $issue = $question();
-        line("Question: $issue");
-        $answer = prompt('Your answer');
-        if ($answer === $trueAnswer($issue)) {
+        $generatedQuestionAndAnswer = $getQuestionAndAnswer();
+        $question = $generatedQuestionAndAnswer['question'];
+        $answer = $generatedQuestionAndAnswer['answer'];
+        line("Question: $question");
+        $userAnswer = prompt('Your answer');
+        if ($userAnswer === $answer) {
             line('Correct!');
             continue;
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '{$trueAnswer($issue)}'.");
+            line("'$userAnswer' is wrong answer ;(. Correct answer was '$answer'.");
             line("Let's try again, $name");
             return;
         }

@@ -19,11 +19,21 @@ function run()
         return rand(MIN_VALUE, MAX_VALUE);
     };
 
-    $correct = function ($num) : string {
+    $answer = function ($num) : string {
         return balance($num);
     };
 
-    game($question, $correct, TASK);
+    $questionAndAnswer = function () use ($question, $answer) {
+        $generatedQuestion = $question();
+        $generatedAnswer = $answer($generatedQuestion);
+
+        return [
+            'question' => (string) $generatedQuestion,
+            'answer' => (string) $generatedAnswer
+        ];
+    };
+
+    game($questionAndAnswer, TASK);
 
     return;
 }
