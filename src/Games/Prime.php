@@ -40,13 +40,16 @@ function run()
 
 function isPrime($number)
 {
-    if ($number < 2) return false;
+    if ($number < 2) {
+        return false;
+    }
 
-    $isPrime = function($number, $div = 2) use (&$isPrime)
-    {
-        if ($div === $number) return true;
+    $isPrime = function ($number, $div = 2) use (&$isPrime) {
+        if ($div === $number) {
+            return true;
+        }
 
-        if ($number % $div === 0 ) {
+        if ($number % $div === 0) {
             return false;
         } else {
             return $isPrime($number, $div + 1);
