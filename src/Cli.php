@@ -8,18 +8,6 @@ use function \cli\prompt;
 const ANSWER_COUNT = 3;
 
 /**
- * Run game
- *
- * @return void
- */
-function run()
-{
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-}
-
-/**
  * Introduction for user
  *
  * @param string $task Task for user
